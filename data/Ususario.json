@@ -1,0 +1,20 @@
+[
+    {
+      "Id": 1,
+      "nameUser": "Gabriela",
+      "password": "contraseña_segura",
+      "Nombre": "Damaris",
+      "Apellido": "Tobar",
+      "Edad": 20,
+      "email": "Gaby@example.com",
+      "rol": "usuario"
+    },
+    {
+      "Id": 2,
+      "nameUser": "Rene",
+      "password": "contraseña_segura2",
+      "Nombre": "Francisco",
+      "Apellido": "Sandoval",
+      "Edad": 20
+    }
+  ]
