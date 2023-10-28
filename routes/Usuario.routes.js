@@ -1,13 +1,20 @@
 import fs from "fs";
 import path from "path";
 import { Router } from "express";
-
 const router = Router();
+
 const usuariosFile = path.join(process.cwd(), 'data', 'Usuario.json');
 // Función para cargar los datos de usuarios desde Usuario.json
 
+//Voy a agregar eso para ver si me muestra el json
+// Ruta GET para obtener la lista de usuarios
+router.get('/users', (req, res) => {
+    const usuarios = ObtenerUsuarios(); // Debes definir la función ObtenerUsuarios() para cargar los datos de Usuario.json
+    res.json({ usuarios });
+});
 
 
+//aqui termina
 
 // Ruta para autenticar un usuario por nombre de usuario y contraseña
 router.post('/login', (req, res) => {
