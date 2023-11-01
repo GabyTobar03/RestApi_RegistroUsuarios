@@ -47,7 +47,7 @@ router.post('/create', (req, res) => {
         return res.status(400).json({ message: 'El nombre de usuario ya está en uso' });
     }
 
-    // Si el nombre de usuario no está en uso, crea un nuevo usuario
+    // Si el nombre de usuario no está en uso, crea un nu evo usuario
     const nuevoUsuario = {
         nameUser,
         password,
@@ -73,3 +73,6 @@ function ObtenerUsuarios() {
 }
 
 export default router;
+
+
+

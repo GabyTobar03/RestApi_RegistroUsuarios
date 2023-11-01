@@ -1,15 +1,16 @@
-import express from "express"//importando la libreria express.
-import dotenv from "dotenv"//importando la libreria dotenv.
-import usuarioRoute from "./routes/Usuario.routes.js"
+import express from "express";
+import dotenv from "dotenv";
+import usuarioRoute from "./routes/Usuario.routes.js";
+import NotasRoute from "./routes/Notas.routes.js";
 
-const app  = express(); //ejecutando la libreria.
+const app = express();
 dotenv.config();
 const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
-app.use("/api", usuarioRoute)//
+app.use("/api", usuarioRoute);
+app.use("/Nota", NotasRoute);
 
-app.listen(PORT, ()=> {
+app.listen(PORT, () => {
     console.log(`Servidor escuchando en el puerto http://localhost:${PORT}`);
 });
-
