@@ -4,7 +4,6 @@ import { Router } from "express";
 const router = Router();
 
 const usuariosFile = path.join(process.cwd(), 'data', 'Usuario.json');
-let nextUserId = 1; // Inicializa el contador para el ID del usuario
 
 // Ruta GET para obtener la lista de usuarios
 router.get('/users', (req, res) => {
@@ -42,7 +41,6 @@ router.post('/create', (req, res) => {
     }
 
     const nuevoUsuario = {
-        id: nextUserId, // Asigna el próximo ID disponible al nuevo usuario
         nameUser,
         password,
         Nombre,
@@ -50,7 +48,6 @@ router.post('/create', (req, res) => {
         Edad
     };
 
-    nextUserId++; // Incrementa el contador para el próximo usuario
 
     usuarios.push(nuevoUsuario);
     fs.writeFileSync(usuariosFile, JSON.stringify(usuarios, null, 2));
