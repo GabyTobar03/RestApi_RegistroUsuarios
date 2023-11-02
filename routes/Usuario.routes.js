@@ -4,7 +4,7 @@ import { Router } from "express";
 const router = Router();
 
 const usuariosFile = path.join(process.cwd(), 'data', 'Usuario.json');
-let nextUserId = 3; // Inicializa el contador para el ID del usuario
+let nextUserId = 1; // Inicializa el contador para el ID del usuario
 
 // Ruta GET para obtener la lista de usuarios
 router.get('/users', (req, res) => {
