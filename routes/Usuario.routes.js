@@ -56,6 +56,7 @@ router.post('/create', (req, res) => {
 });
 
 function ObtenerUsuarios() {
+    const usuariosFile = path.join(process.cwd(), 'data', 'Usuario.json');
     const contenido = fs.readFileSync(usuariosFile, 'UTF-8');
     return JSON.parse(contenido);
 }
