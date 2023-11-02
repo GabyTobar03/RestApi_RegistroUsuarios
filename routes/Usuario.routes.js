@@ -22,9 +22,9 @@ router.post('/login', (req, res) => {
     if (!usuario) {
         return res.status(404).json({ message: 'Usuario no encontrado' });
     }
- 
+
     if (usuario.password === password) {
-        return res.json({usuario });
+        return res.json({ usuario });
     } else {
         return res.status(401).json({ message: 'Contraseña incorrecta' });
     }
@@ -35,6 +35,7 @@ router.post('/create', (req, res) => {
     const { nameUser, password, Nombre, Apellido, Edad } = req.body;
     const usuarios = ObtenerUsuarios();
 
+    // Verificar si el nombre de usuario ya está en uso
     const usuarioExistente = usuarios.find(user => user.nameUser === nameUser);
     if (usuarioExistente) {
         return res.status(400).json({ message: 'El nombre de usuario ya está en uso' });
