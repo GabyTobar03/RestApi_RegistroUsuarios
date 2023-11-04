@@ -4,5 +4,11 @@
             "id":7,
             "titulo":"Mi primera nota",
             "contenido":"Hola"
+},
+{
+    "userId":1,
+    "id":3,
+    "titulo":"Mi segunda nota",
+    "contenido":"Hola"
 }
 ]
