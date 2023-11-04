@@ -1,1 +1,8 @@
-[{"userId":1,"titulo":"Mi primera nota","contenido":"Hola"},{"userId":1,"titulo":"Mi primera nota","contenido":"Hola"},{"id":3,"titulo":"Mi segunda nota","contenido":"Hola"},{"id":4,"titulo":"Mi tercera nota","contenido":"Hola"},{"id":5,"titulo":"Mi ultima nota","contenido":"Hola"},{"id":6,"titulo":"Mi primera nota","contenido":"Hola"},{"userId":33,"id":7,"titulo":"Mi primera nota","contenido":"Hola"}]
+[
+{
+            "userId":1,
+            "id":7,
+            "titulo":"Mi primera nota",
+            "contenido":"Hola"
+}
+]
