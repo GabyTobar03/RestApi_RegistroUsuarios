@@ -8,7 +8,7 @@ const notas = ObtenerTodasLasNotas();
 
 // Ruta GET para obtener todas las notas
 router.post('/obtener', (req, res) => {
-    const { userId} = req.body
+    const {userId} = req.body
 
     // Filtra las notas que tienen el ID de usuario especificado
     const notasRelacionadas = notas.filter(nota => nota.userId === userId);

@@ -4,6 +4,34 @@ import { Router } from "express";
 const router = Router();
 
 const usuariosFile = path.join(process.cwd(), 'data', 'Usuario.json');
+import { v4 as uuidv4 } from 'uuid';
+
+router.post('/create', (req, res) => {
+    const { nameUser, password, Nombre, Apellido, Edad } = req.body;
+    const usuarios = ObtenerUsuarios();
+
+    // Verificar si el nombre de usuario ya está en uso
+    const usuarioExistente = usuarios.find(user => user.nameUser === nameUser);
+    if (usuarioExistente) {
+        return res.status(400).json({ message: 'El nombre de usuario ya está en uso' });
+    }
+
+    const randomNumber = Math.floor(Math.random() * 1000000); // Generar número aleatorio
+    const nuevoUsuario = {
+        id: randomNumber.toString(), // Convertir el número en cadena de texto
+        nameUser,
+        password,
+        Nombre,
+        Apellido,
+        Edad
+    };
+
+    usuarios.push(nuevoUsuario);
+    fs.writeFileSync(usuariosFile, JSON.stringify(usuarios, null, 2));
+
+    return res.json({ message: 'Usuario creado exitosamente', usuario: nuevoUsuario });
+});
+
 
 // Ruta GET para obtener la lista de usuarios
 router.get('/users', (req, res) => {
@@ -30,30 +58,7 @@ router.post('/login', (req, res) => {
 });
 
 // Ruta para crear un nuevo usuario y validar el nombre de usuario
-router.post('/create', (req, res) => {
-    const { nameUser, password, Nombre, Apellido, Edad } = req.body;
-    const usuarios = ObtenerUsuarios();
 
-    // Verificar si el nombre de usuario ya está en uso
-    const usuarioExistente = usuarios.find(user => user.nameUser === nameUser);
-    if (usuarioExistente) {
-        return res.status(400).json({ message: 'El nombre de usuario ya está en uso' });
-    }
-
-    const nuevoUsuario = {
-        nameUser,
-        password,
-        Nombre,
-        Apellido,
-        Edad
-    };
-
-
-    usuarios.push(nuevoUsuario);
-    fs.writeFileSync(usuariosFile, JSON.stringify(usuarios, null, 2));
-
-    return res.json({ message: 'Usuario creado exitosamente', usuario: nuevoUsuario });
-});
 
 function ObtenerUsuarios() {
     const usuariosFile = path.join(process.cwd(), 'data', 'Usuario.json');

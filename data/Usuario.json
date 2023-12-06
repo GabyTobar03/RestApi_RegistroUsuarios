@@ -23,5 +23,51 @@
     "Nombre": "Francisco",
     "Apellido": "Sandoval",
     "Edad": 20
+  },
+  {
+    "nameUser": "Walter",
+    "password": "contraseña_segura2",
+    "Nombre": "Francisco",
+    "Apellido": "Sandoval",
+    "Edad": 20
+  },
+  {
+    "nameUser": "Walter Mena",
+    "password": "contraseña_segura2",
+    "Nombre": "Francisco",
+    "Apellido": "Sandoval",
+    "Edad": 20
+  },
+  {
+    "id": "af559ea1-f0d1-4934-8828-0470927d0e85",
+    "nameUser": "Damaris Tobar",
+    "password": "contraseña_segura2",
+    "Nombre": "Francisco",
+    "Apellido": "Sandoval",
+    "Edad": 20
+  },
+  {
+    "id": "3fd00ae1-b0c0-495f-b7b0-08872293b32e",
+    "nameUser": "Damaris Tobar Sandoval",
+    "password": "contraseña_segura2",
+    "Nombre": "Francisco",
+    "Apellido": "Sandoval",
+    "Edad": 20
+  },
+  {
+    "id": "a8c2ae62-4364-40dc-8138-70e490e6a5bd",
+    "nameUser": "Mena0904",
+    "password": "esfe2023",
+    "Nombre": "walter",
+    "Apellido": "mena",
+    "Edad": 23
+  },
+  {
+    "id": "532929",
+    "nameUser": "Mena0905",
+    "password": "esfe2023",
+    "Nombre": "walter",
+    "Apellido": "mena",
+    "Edad": 23
   }
-  ]
+]
